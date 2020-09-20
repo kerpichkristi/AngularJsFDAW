@@ -20,8 +20,8 @@ table, th, td {
    <table class="table table-striped">
             <thead>
                 <tr>
-                    <th>Имя</th>
                     <th>Фамилия</th>
+                    <th>Имя</th>
                     <th>Оценка</th>
            
                 </tr>
@@ -29,8 +29,8 @@ table, th, td {
             <tbody>
                 <tr ng-repeat="x in students | filter : {'lastname' : x.lastname}" >
                 	<p><b>Введите фамилию студента:</b> <input ng-model="x.lastname" type="text"></p>
-                    <td>{{x.firstname}}</td>
                     <td>{{x.lastname}}</td>
+					<td>{{x.firstname}}</td>                 
                     <td>{{x.mark}}</td>
                    
                 </tr>
@@ -44,8 +44,8 @@ table, th, td {
    <table class="table table-striped">
             <thead>
                 <tr>
-                    <th>Имя</th>
                     <th>Фамилия</th>
+                    <th>Имя</th>
                     <th>Оценка</th>           
                 </tr>
             </thead>
