@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+table, th, td {
+  border: 1px solid black;
+}
+</style>
+</head>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<body>
+
+<div ng-app="myApp" ng-controller="myCtrl">
+ 
+ <div class="page-header">
+        <h1>Список студентов</h1>
+    </div>
+<hr>     
+   <div class="panel">
+   <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Имя</th>
+                    <th>Фамилия</th>
+                    <th>Оценка</th>
+           
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="x in students | filter : {'lastname' : x.lastname}" >
+                	<p><b>Введите фамилию студента:</b> <input ng-model="x.lastname" type="text"></p>
+                    <td>{{x.firstname}}</td>
+                    <td>{{x.lastname}}</td>
+                    <td>{{x.mark}}</td>
+                   
+                </tr>
+            </tbody>
+        </table>
+    </div>
+<hr>
+<br>    
+<b>Поиск по оценке<b>
+ <div class="panel">
+   <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Имя</th>
+                    <th>Фамилия</th>
+                    <th>Оценка</th>           
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="x in students | filter : {'mark' : x.mark }" >
+                	<p><b>Введите оценку студента:</b> <input ng-model="x.mark" type="text"></p>
+                    <td>{{x.lastname}}</td>
+                    <td>{{x.firstname}}</td>           
+                    <td>{{x.mark}}</td>                   
+                </tr>
+            </tbody>
+        </table>
+    </div>
+<hr>
+<br>
+<b>Сортировка по оценке(по убыванию)</b>
+ <div class="panel">
+ <br>
+   <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Имя</th>
+                    <th>Фамилия</th>
+                    <th>Оценка</th>           
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="x in students | orderBy : 'mark' : true " >
+                    <td>{{x.lastname}}</td>
+                    <td>{{x.firstname | limitTo : 1}}.</td>
+                    <td>{{x.mark}}</td>                   
+                </tr>
+            </tbody>
+        </table>
+    </div>
+<br>
+<hr>
+    <p>Выберите студента:</p>
+    <select ng-model="selectedStudent">
+      <option ng-repeat="x in students">{{(x.lastname) + " " + (x.firstname | limitTo : 1) + ". " + " has " + (x.mark)}}</option>
+    </select>
+</div>
+
+<script>
+var app = angular.module('myApp', []);
+app.controller('myCtrl', function($scope) {
+    $scope.students = [
+        
+        {"firstname" : "Nicolai", "lastname" : "Domentii", "mark" : 8},
+        {"firstname" : "Iulia", "lastname" : "Pestusco", "mark" : 10},
+        {"firstname" : "Mark", "lastname" : "Breahna", "mark" : 5},  
+        {"firstname" : "Antonina", "lastname" : "Duca", "mark" : 6},
+        {"firstname" : "Anastasia", "lastname" : "Malcoci", "mark" : 9},
+        {"firstname" : "Elena", "lastname" : "Schastlivaia", "mark" : 8},        
+        {"firstname" : "Anna", "lastname" : "Gazia", "mark" : 7},
+        {"firstname" : "Olga", "lastname" : "Vinogradscaia", "mark" : 8},
+        {"firstname" : "Dmitrii", "lastname" : "Spetetsci", "mark" : 7},        
+        {"firstname" : "Anastasia", "lastname" : "Dereagina", "mark" : 6}
+    ];
+});
+</script>
+
+   
+</body>
+</html>

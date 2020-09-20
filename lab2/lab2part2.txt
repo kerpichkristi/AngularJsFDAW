@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta chrset="UTF 8">
+</head>
+<body>
+<script src="https://code.angularjs.org/1.6.9/angular.js"></script>
+
+<!-- •	сервис возводит в степень число
+•	введите а и б; после щелчка выдайте произведение а и б
+•	введите а и б определить делится ли а на б
+ -->
+<h3>Введите два числа:</h3>
+
+<div ng-app="myApp" ng-controller="myCtrl">
+
+<p>Введите A <input type="number" ng-model="a"></p>
+<p>Введите B <input type="number" ng-model="b"></p>
+
+<button ng-model="button" ng-show="a && b == 0 || a && b || a == 0 && b || a == 0 && b ==0" ng-click="toggle()">Показать/Скрыть ответ</button>
+
+<div ng-show="a && b || a && b == 0 || a == 0 && b || a == 0 && b ==0 ">
+<p ng-show="myVar">
+Возведение A<sup>b</sup>: {{pow()}}<br>
+Сумма: {{sum()}} <br>
+Вычитание: {{del()}}<br>
+Умножение: {{umn()}}<br>
+<span ng-show="myVar && b">Деление: {{div()}}</span></p>
+</div>
+</div>
+
+<script>
+var app = angular.module('myApp', []);
+app.controller('myCtrl', function($scope) {
+
+$scope.sum = function() {return $scope.a + " + " + $scope.b + " = " + ($scope.a + $scope.b);};
+$scope.del = function() {return $scope.a + " - " + $scope.b + " = " + ($scope.a - $scope.b);};
+$scope.umn = function() {return $scope.a + " * " + $scope.b + " = " + ($scope.a * $scope.b);};
+$scope.div = function() {return $scope.a + " / " + $scope.b + " = " + ($scope.a / $scope.b);};
+$scope.pow = function() {return Math.pow($scope.a, $scope.b);};
+$scope.myVar = false;
+$scope.toggle = function() {$scope.myVar = !$scope.myVar;};
+});
+</script>
+
+</body>
+</html>
