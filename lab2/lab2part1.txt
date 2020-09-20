@@ -44,16 +44,16 @@ table, th, td {
    <table class="table table-striped">
             <thead>
                 <tr>
-                    <th>Фамилия</th>
                     <th>Имя</th>
+                    <th>Фамилия</th>
                     <th>Оценка</th>           
                 </tr>
             </thead>
             <tbody>
                 <tr ng-repeat="x in students | filter : {'mark' : x.mark }" >
-                	<p><b>Введите оценку студента:</b> <input ng-model="x.mark" type="text"></p>
-                    <td>{{x.lastname}}</td>
-                    <td>{{x.firstname}}</td>           
+                	<p><b>Введите оценку студента:</b> <input ng-model="x.mark" type="text"></p>      
+                    <td>{{x.firstname}}</td>
+                    <td>{{x.lastname}}</td>					
                     <td>{{x.mark}}</td>                   
                 </tr>
             </tbody>
@@ -67,8 +67,8 @@ table, th, td {
    <table class="table table-striped">
             <thead>
                 <tr>
-                    <th>Имя</th>
                     <th>Фамилия</th>
+                    <th>Имя</th>
                     <th>Оценка</th>           
                 </tr>
             </thead>
