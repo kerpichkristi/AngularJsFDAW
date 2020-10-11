@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+</head>
+
+<body>
+
+    <div ng-app="">
+        <div class="container">
+            <h3>Форма</h3> <br>
+            <form>
+                Фамилия: <input type="text" ng-model="firstName" required>
+                <br> Имя: <input type="text" ng-model="lastName" required>
+                <br> Дата рождения: <input type="date" ng-model="birthDate" required>
+                <br> Факультет:
+                <div>
+                    <input value="Химия" type="radio" id="radio1" name="faculty" ng-model="faculty">
+                    <label for="radio1">Химия</label>
+                </div>
+                <div>
+                    <input value="Информатика " type="radio" id="radio2" name="faculty" ng-model="faculty">
+                    <label for="radio2">Информатика</label>
+                </div>
+                <div>
+                    <input value="Математика" type="radio" id="radio3" name="faculty" ng-model="faculty">
+                    <label for="radio3">Математика</label>
+                </div>
+                <div>
+                    <input value="Биология" type="radio" id="radio4" name="faculty" ng-model="faculty">
+                    <label for="radio4">Биология</label>
+                </div> <br> Предмет:
+                <div class="col-auto my-1">
+                    <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" ng-model="subject">
+                        <option value="Органическая химия">Органическая химия</option>
+                        <option value="Математика">Математика</option>
+                        <option value="Экономика">Экономика</option> 
+                        <option value="Математика">Философия</option>
+                    </select>
+                </div> <br> Ожидаемая зарплата:
+                <input class="form-input" type="number" ng-model="Salary"> <br>
+                <div ng-if="Salary >= 10000">
+                    <span>ПРЕУВЕЛИЧЕННАЯ</span> <br>
+                </div>
+                <div ng-if="Salary <= 3000">
+                    <span class="text-danger">Вы себя недооцениваете</span> <br>
+                </div>
+
+
+                <br>
+                <button ng-init="isSubmit=false;" ng-click="isSubmit=true;" ng-disabled="Salary >= 10000||!firstName||!lastName||!birthDate||!faculty||!subject">Согласен</button>
+                <button>Отказ</button>
+            </form>
+
+
+            <div ng-if="isSubmit">
+                <h3>Введённая информация</h3>
+                Фамиллия: {{firstName}}
+                <br> Имя: {{lastName}}
+                <br> Дата рождения: {{birthDate | date}}
+                <br> Факультет: {{faculty}}
+                <br> Предмет: {{subject}}
+                <br> Ожидаемая зарплата: {{Salary}} <br>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

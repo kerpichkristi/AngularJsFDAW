@@ -25,7 +25,7 @@
 Сумма: {{sum()}} <br>
 Вычитание: {{del()}}<br>
 Умножение: {{umn()}}<br>
-<span ng-show="myVar && b">Деление: {{div()}}</span></p>
+<span ng-show="myVar && b && a">Деление: {{div()}}</span></p>
 </div>
 </div>
 
