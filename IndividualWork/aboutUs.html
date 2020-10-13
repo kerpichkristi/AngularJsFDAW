@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <title>Lapmol молочная продукция</title>
+    <link rel="shortcut icon" href="resources/images/logos/logo.svg">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body ng-app="myApp" ng-controller="productsCtrl"></body>
+<header>
+    <div class="wrapper container">
+        <nav class="navbar navbar-expand-lg row">
+            <a class="navbar-brand col-xs-2" href="index.html">
+                <img width="270px" height="100px" class="img-responsive" src="resources/images/logos/logo.svg" alt="Lapmol">
+            </a>
+
+            <nav class="two">
+                <ul>
+                    <li><a href="index.html"><i class="fa fa-home fa-fw"></i>Главная</a></li>
+                    <li><a href="aboutUs.html">О нас</a></li>
+                    <li><a href="products.html">Продукция</a></li>
+                    <li><a href="contacts.html">Контакты</a></li>
+                    <li ng-show="isSignIn == false">
+                        <button id="myBtn">Вход</button>
+                    </li>
+                    <li ng-show="isSignIn == true">
+                        <button class="btn-success">Привет, {{login | uppercase}}</button>
+                    </li>
+                    <li ng-show="isSignIn == true">
+                        <button class="btn-danger" ng-click="isSignIn = false">Выход</button>
+                    </li>
+                </ul>
+            </nav>
+
+        </nav>
+    </div>
+</header>
+
+<div class="container" style="background-color: aliceblue;">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="article" ng-copy="count = count + 1" ng-init="count=374">
+
+                <h2 style="text-align: center;">
+                    <div class="content-head">
+                        <h3 class="text-left text-uppercase font-weight-bold mt-5 mb-5">О компании</h3>
+                        <p ng-non-bindable><span>{{13.07.2015}}</span></p>
+                    </div><span style="color: #333333;"><strong>История создания</strong></span></h2>
+                <div style="text-align: justify;"><span style="color: #333333;">Компания Lapmol SRL была образована в 1997 и первоначально являлась дистрибьютором молочной продукции местных производителей, что и отразилось на названии компании: Lapmol – происходит от двух слов LAPte и MOLdovenesc, что означает молдавское молоко.</span></div>
+                <div style="text-align: justify;"><span style="color: #333333;">В 1999 году компания организовала производство глазированных сырков под брендом «Lapmol», ассортимент сырков был совсем небольшой - всего 4 вида. Это был новый продукт на рынке Молдовы, он сразу полюбился всем и покорил молдавский рынок. Немногим позже, в&nbsp; 2001 году, была разработана торговая марка «Big Lapik», под которой сегодня производятся около 30 видов глазированных и неглазированных сырков.&nbsp;&nbsp;</span></div>
+                <div style="text-align: justify;"><span style="color: #333333;">С 2000 года&nbsp; Lapmol является единственным эксклюзивным представителем компании Danone на молдавском рынке.</span></div>
+                <div style="text-align: justify;"><span style="color: #333333;"><strong>В 2002 году предприятие расширилось и начало производить и кисло-молочную продукцию, появился бренд&nbsp; «Căsuţa Mea».</strong> Все молочные продукты Căsuța Mea производятся из высококачественного молока от коров самых лучших пород, выращенных на фермах Молдовы. Стремясь сохранить привычный вкус и все свойства домашнего молока, мы нацелены на постоянное увеличение количества ферм-партнеров.</span></div>
+                <div style="text-align: justify;"><span style="color: #333333;">В 2007 г. открылся новый молочный завод компании «Lapmol», расположенный в экологически чистом регионе республики – Бричанском районе.</span></div>
+                <div style="text-align: justify;"><span style="color: #333333;">Сейчас компания Lapmol SRL — это один из лидеров производителей молочных продуктов в Молдове с уже почти 20-летней историей. Это 2 производственные площадки: комбинат по производству сливочного масла и сухого молока&nbsp; в Липканах и завод по производству молочных продуктов в Кэлэраше, а также логистический центр Кишиневе. Сейчас в компании трудятся свыше 450 человек.</span></div>
+                <h2 style="text-align: center;"><span style="color: #333333;"><strong><br>Философия компании </strong></span></h2>
+                <div style="text-align: justify;"><span style="color: #333333;"><strong>Миссия компании</strong> – ежедневная забота о здоровье потребителей.</span></div>
+                <div style="text-align: justify;"><span style="color: #333333;"><strong>Стратегия</strong> - предложить людям качественные, полезные для здоровья молочные продукты собственного производства и лучших мировых производителей.</span></div>
+                <div style="text-align: justify;"><span style="color: #333333;"><strong>Девиз</strong>&nbsp; – Здоровье день за днем!</span></div>
+                <h2 style="text-align: center;"><span style="color: #333333;"><strong><br>Социальная ответственность</strong></span></h2>
+                <div style="text-align: justify;">
+                    <div><span style="text-decoration: underline; font-size: 14pt; color: #333333;"><strong>МТВ Lapmol CUP</strong></span></div>
+                    <div><span style="color: #333333;">Соревнования по маунтинбайкингу (горному велосипеду) в Молдове проводились с &nbsp;2005 года. &nbsp;Главной целью соревнований является продвижение здорового спортивного образа жизни.&nbsp;</span></div>
+                    <div><span style="color: #333333;">В 2012 соревнования остались без организатора. Коммерческий директор компании ЛАПМОЛ, большой любитель велосипедного спорта и здорового образа жизни, взял на себя организацию соревнований и привлек ЛАПМОЛ как главного спонсора и партнера соревнований. Так появился Кубок ЛАПМОЛ по МТВ, а молдавское велосипедное движение получило новое дыхание.</span></div>
+                    <div><span style="color: #333333;">На протяжение одного спортивного сезона, как правило, организуется 7 мероприятий, которые проходят в Кишиневских парках. Один раз в 2 года соревнования принимают Бельцы.&nbsp; По результатам каждой гонки победители получают подарки. Каждый год спортивный календарь дорабатывается и согласуется с молдавской федерацией велосипедного спорта.</span></div>
+                    <div><span style="color: #333333;">В соревнованиях принимают участие более 100 спортсменов, с каждым годом число участников растет. Расширяется и география: в этом году в соревнованиях принимали участие гости из Оргеева, Бельц, Тирасполя, Тигины, Комрата, Ясс и Одессы.</span></div>
+                    <div><span style="color: #333333;">Гонки проходят в нескольких форматах:</span></div>
+                    <div>
+                        <ul>
+                            <li><span style="color: #333333;">Классическая гонка XCO, где участники двигаются по кругу, длиной приблизительно&nbsp; 3 – 4,5 км. Гонка длится около 1,5 часов. &nbsp;</span></li>
+                            <li><span style="color: #333333;">Марафон XCM –&nbsp; участники преодолевают круговую дистанцию до 70 км.</span></li>
+                            <li><span style="color: #333333;">Парный марафон XCM – &nbsp;соревнование для команд из 2 человек, которые преодолевают дистанцию последовательно друг за другом, передовая эстафету. Соревнование длится 6 часов</span></li>
+                        </ul>
+                    </div>
+                    <div><span style="color: #333333;">Участники делятся на категории в зависимости от возраста и степени подготовки.</span></div>
+                </div>
+                <div style="text-align: justify;"><span style="color: #333333;"><em>&nbsp;<br><br></em></span></div>
+                <div style="text-align: justify;"><span style="text-decoration: underline; font-size: 14pt; color: #333333;"><strong>Фестиваль коров</strong></span></div>
+                <div style="text-align: justify;"><span style="color: #333333;">1 июня 2014 года Căsuţa Mea организовала Первый в Молдове Фестиваль коров.</span></div>
+                <div style="text-align: justify;"><span style="color: #333333;">Модели коров в натуральную величину расписывали известные художники, дизайнеры, звезды шоу-бизнеса и творческие люди вручную, поэтому ни одна «раскраска» не повторилась &nbsp;дважды, и каждый экспонат уникален. Расписные коровы были выставлены перед Триумфальной Аркой в центре Кишинева на всеобщее обозрение. Затем коровы путешествовали по разным концам города и радовали его жителей, давая возможность вблизи рассмотреть чудо-коров, сфотографироваться с ними. Мы были очень рады подарить это событие нашему городу.</span></div>
+                <div style="text-align: justify;"><span style="color: #333333;">Фото с Первого в Молдове Фестиваля коров можно найти <span style="text-decoration: underline;"><em><a style="color: #333333; text-decoration: underline;" href="http://diez.md/2014/06/01/foto-in-premiera-la-chisinau-a-avut-loc-festivalul-vacutelor/" target="_blank">здесь</a></em></span>,&nbsp;
+                    <span style="text-decoration: underline;"><em><a style="color: #333333; text-decoration: underline;" href="http://triptomoldova.wordpress.com/2014/06/02/impressions-from-a-colorful-event-cow-parade/" target="_blank">здесь</a></em></span>,&nbsp;
+                    <span style="text-decoration: underline;"><em><a style="color: #333333; text-decoration: underline;" href="http://madein.md/news/evenimente/in-chisinau-s-a-desfasurat-primul-festival-al-vacutelor-foto" target="_blank">здесь</a></em></span>,&nbsp;
+                    <span style="text-decoration: underline;"><em><a style="color: #333333; text-decoration: underline;" href="http://www.realitatea.md/primul-festival-al-vacu-elor_4291.html" target="_blank">здесь</a></em></span>,&nbsp;<span style="text-decoration: underline;"><a style="color: #333333; text-decoration: underline;" href="http://benia.livejournal.com/533216.html" target="_blank"><em>здесь</em> </a></span>и&nbsp;
+                    <span style="text-decoration: underline;"><em><a style="color: #333333; text-decoration: underline;" href="http://benia.livejournal.com/532944.html" target="_blank">здесь</a></em></span>.</span>
+                </div>
+                <div style="text-align: justify;">&nbsp;</div>
+                <div style="text-align: justify;"><span style="color: #333333;"><em>Справка: идея «Парада коров» принадлежит скульптору Beat Seeberger-Quin, который в 1998 году впервые и устроил эту выставку в Цюрихе. Пестрые буренки имели оглушительный успех у жителей и гостей города. Они произвели небывалый ажиотаж среди мировой культурной богемы, благодаря чему Cow Parade стал ежегодным мероприятием планетарного масштаба.</em></span></div>
+                <div style="text-align: justify;"><span style="color: #333333;"><em>Немного позднее идею поддержал бизнесмен&nbsp; Питер Хениг, который создал все условия для того, чтобы «коровы» появились и на улицах Чикаго. Каждый год эстафету парада коров принимает один из крупнейших мегаполисов, в числе которых уже отметились такие города, как Нью-Йорк, Лондон, Стокгольм, Прага, Токио, Москва&nbsp; и многие другие. До сих пор, более чем 70 городов приняли участие свыше 6.500 художников , участвующих в разработке более чем 6,000 коров !</em></span></div>
+                <div style="text-align: justify;"><span style="color: #333333;"><strong>&nbsp;<br><br></strong></span></div>
+                <div style="text-align: justify;">
+                    <div><span style="text-decoration: underline; color: #333333;"><span style="font-size: 14pt;"><strong>Big Lapik – чемпион!</strong></span></span>
+                    </div>
+                    <div><span style="color: #333333;">19 мая 2007 г. в рамках ежегодной выставки «Food &amp; Drinks» проходящей на территории MoldExpo, состоялось событие, действительно неординарное для Молдовы. Компания Lapmol SRL приготовила самый большой глазированный сырок в Мире. С этой акции, которая прошла под названием "Big Lapik – абсолютный чемпион!" началось празднование десятилетнего юбилея работы компании на молдавском рынке.</span></div>
+                    <div><span style="color: #333333;">Рекорд по созданию гигантских глазированных сырков ранее принадлежал российским производителям. Последним достижением был сырок весом в 370 кг. Компания Lapmol SRL решила намного превысить этот рекорд и заявила, что приготовит сырок-гигант массой в 555 кг! Задача предстояла крайне сложная. Вес сырка был основной, но не единственной целью. Сырок-гигант имел классический состав и в точности соблюдал все пропорции обычного глазированного сырка. Он был изготовлен цельным куском, без использования каких-либо скрепляющих и утяжеляющих материалов. Специалисты - технологи компании Lapmol SRL успешно справились с этой задачей, и приготовили Big Lapik – абсолютный чемпион!</span></div>
+                </div>
+                <div style="text-align: justify;"><span style="color: #333333;">&nbsp;</span></div>
+                <h2 style="text-align: center;"><span style="color: #333333;"><strong>Клуб&nbsp;</strong><strong>Căsuța Mea</strong></span></h2>
+                <p style="text-align: left;"><span style="color: #333333;"><strong>От настоящего молока больше пользы!<br></strong><br>С июня 2014 мы предлагаем нашим клиентам стать членами Клуба&nbsp; Căsuța Mea, работающего под девизом «От настоящего молока больше пользы».&nbsp; В рамках этой акции наши потребители приобретая любимые молочные продукты Căsuța Mea получают подарки. Цель акции – отблагодарить наших преданных потребителей, даря им подарки от имени компании.</span></p>
+                <div style="text-align: left;"><span style="color: #333333;">Механизм акции таков: каждая бутылка молока, кефира и биокефира, сметана в стакане и творог в касероле содержат уникальный код. Каждый код приносит определенное количество баллов, которые, зарегистрировавшись на сайте <a style="color: #333333;" href="http://www.casutamea.md/">www.casutamea.md</a>, Вы собираете.&nbsp; Накопленные баллы можно потратить на замечательные подарки из нашего каталога. Подарки самые разные: бытовая техника, посуда, подписка на журнал, трикотаж, товары для детей и много другое. Каталог постоянно дополняется. Следите за обновлениями!</span></div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <p>Это текст кому-то понадобился уже {{count}} раз.</p>
+
+</div>
+
+
+<div class="footer-copyright text-center py-3">© 2015 Copyright:
+    <a href="index.html"> Moldova Lapmol</a>
+</div>
+
+<div id="myModal" class="modal">
+
+    <div class="modal-content">
+        <div class="modal-header">
+            <span class="close">&times;</span>
+        </div>
+        <div class="modal-body">
+            <h2 class="text-center text-uppercase font-weight-bold">Sign in</h2> <br>
+            <form ng-submit="signIn()">
+                <h2 class="text-center">Login</h2>
+                <input ng-model="inputLogin" class="form-control" type="text"> <br>
+
+                <h2 class="text-center">Password</h2>
+                <input ng-model="inputPass" class="form-control" type="password"> <br>
+
+                <input class="btn btn-primary btn-lg btn-block" type="submit" value="Sign in"> <br>
+                <input class="btn btn-danger btn-lg btn-block" type="reset" value="Reset"><br> <br>
+            </form>
+        </div>
+    </div>
+
+</div>
+
+<script src="js/modalView.js"></script>
+<script src="js/myApp.js"></script>
+<script src="js/productsCtrl.js"></script>
+</body>
+
+</html>
