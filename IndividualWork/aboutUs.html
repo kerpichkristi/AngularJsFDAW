@@ -119,27 +119,35 @@
     <a href="index.html"> Moldova Lapmol</a>
 </div>
 
-<div id="myModal" class="modal">
-
-    <div class="modal-content">
-        <div class="modal-header">
-            <span class="close">&times;</span>
-        </div>
-        <div class="modal-body">
-            <h2 class="text-center text-uppercase font-weight-bold">Sign in</h2> <br>
-            <form ng-submit="signIn()">
-                <h2 class="text-center">Login</h2>
-                <input ng-model="inputLogin" class="form-control" type="text"> <br>
-
-                <h2 class="text-center">Password</h2>
-                <input ng-model="inputPass" class="form-control" type="password"> <br>
-
-                <input class="btn btn-primary btn-lg btn-block" type="submit" value="Sign in"> <br>
-                <input class="btn btn-danger btn-lg btn-block" type="reset" value="Reset"><br> <br>
-            </form>
+<div class="modal" id="myModal">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Вход в систему</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form name="form" ng-submit="signIn()" role="form">
+                    <div class="form-group">
+                        <label for="inputLogin">Имя пользователя</label>
+                        <i class="fa fa-key"></i>
+                        <input type="text" name="inputLogin" class="form-control" ng-model="inputLogin" required/>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputPass">Пароль</label>
+                        <i class="fa fa-lock"></i>
+                        <input type="password" name="inputPass" id="inputPass" class="form-control" ng-model="inputPass" required/>
+                    </div>
+                    <div class="form-actions text-center">
+                        <button type="button" class="btn btn-default" data-dismiss="modal" value="Sign in">Закрыть</button>
+                        <button type="submit" class="btn btn-primary" value="Reset">Войти</button>
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
-
 </div>
 
 <script src="js/modalView.js"></script>
