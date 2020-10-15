@@ -1,5 +1,5 @@
 app.controller('productsCtrl', function($scope) {
-    $scope.smartphones = [
+    $scope.product = [
         { "title": "Cremosso Danone", "price": 8.50, "image": "resources/images/products-photo/3af9a04340a7354cd70171912586dc4e.png" },
         { "title": "Danonino", "price": 21, "image": "resources/images/products-photo/8d23402d1077e00cad2ca0b7f9ba8d03.png" },
         { "title": "Unt casuta mea classic", "price": 21, "image": "resources/images/products-photo/9eb06d7206761c87dc65f14b8577ff66.jpg" },
@@ -37,21 +37,21 @@ app.controller('productsCtrl', function($scope) {
     };
 
     $scope.removeProduct = function(itemTitle) {
-        const index = $scope.smartphones.findIndex(x => x.title === itemTitle);
+        const index = $scope.product.findIndex(x => x.title === itemTitle);
 
-        $scope.smartphones.splice(index, 1);
+        $scope.product.splice(index, 1);
 
         console.log(index);
     }
 
-    $scope.addNewSmartphone = function() {
+    $scope.addNewProduct = function() {
         newSmartphone = {
             title: "Unknown",
             price: 0,
             image: "resources/images/banners/a7bc4136738cee30d56d446fdf37d469.jpg"
         }
 
-        $scope.smartphones.push(newSmartphone);
+        $scope.product.push(newProduct);
     }
 
 
