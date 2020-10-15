@@ -50,7 +50,7 @@
     <div class="container" ng-init="orderByPrice=true" style="background-color: aliceblue;">
 
         <h1 class="text-center text-uppercase font-weight-bold">Молочная продукция</h1>
-        <button ng-click="addNewSmartphone()" ng-show="isSignIn == true" class="btn btn-success btn-block">Добавить продукт</button> <br>
+        <button ng-click="addNewProduct()" ng-show="isSignIn == true" class="btn btn-success btn-block">Добавить продукт</button> <br>
 
         <h3>Фильтры</h3>
         <div class="input-group">
@@ -68,7 +68,7 @@
         <button class="btn btn-danger" ng-click="resetFilters()">Сбросить фильтры</button>
 
         <div class="row">
-            <div ng-repeat="item in smartphones | filter : search | orderBy : myOrderBy : myReverseBy | filter : myFilter">
+            <div ng-repeat="item in product | filter : search | orderBy : myOrderBy : myReverseBy | filter : myFilter">
                 <div class="card" style="width:250px; padding-top: 20px; margin: 10px;">
                     <img class="card-img-top" src="{{item.image}}" alt="Card image" style="width:100%">
                     <div class="card-body">
@@ -97,7 +97,6 @@
     <div class="footer-copyright text-center py-3">© 2015 Copyright:
         <a href="index.html"> Moldova Lapmol</a>
     </div>
-    </footer>
 
     <div class="modal" id="myModal">
         <div class="modal-dialog" role="document">

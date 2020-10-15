@@ -45,7 +45,7 @@ app.controller('productsCtrl', function($scope) {
     }
 
     $scope.addNewProduct = function() {
-        newSmartphone = {
+        newProduct = {
             title: "Unknown",
             price: 0,
             image: "resources/images/banners/a7bc4136738cee30d56d446fdf37d469.jpg"
